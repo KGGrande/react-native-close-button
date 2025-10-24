@@ -47,7 +47,16 @@ namespace winrt::RNCloseButton
   }
 
   void RNCloseButton::closeNow() noexcept {
-    Window::Current().Close();
+    HWND hwnd = getHwnd();
+    if (!hwnd)
+      return;
+    // Find the top-level owner (handles modals and nested windows)
+    HWND rootHwnd = GetAncestor(hwnd, GA_ROOTOWNER);
+    if (!rootHwnd)
+      rootHwnd = hwnd;
+    // Post the close message to the main window, not the modal
+    PostMessage(rootHwnd, WM_CLOSE, 0, 0);
+
   }
 
 } // namespace winrt::RNCloseButton
