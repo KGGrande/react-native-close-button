@@ -14,6 +14,27 @@
     "url": "https://github.com/jihoobyeon/react-native-close-button/issues"
   },
   "homepage": "https://github.com/jihoobyeon/react-native-close-button#readme",
+  "files": [
+    "src",
+    "lib",
+    "!android",
+    "!ios",
+    "cpp",
+    "!*.podspec",
+    "react-native.config.js",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*",
+    "windows",
+    "macos"
+  ],
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.5.0",
